@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice #1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="grille">
+        <header class="bloc entete">
+            <h1>Mon Site</h1>
+            <section class="animation">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+            </section>
+        </header>
+
+        <section class="bloc menu">
+            <input type="checkbox" id="chkburger">
+        <label for="chkburger" id="burger">
+            <img src="https://s2.svgbox.net/hero-outline.svg?ic=menu-alt-1&color=84e378" width="32" height="32">
+        </label>
+        <nav>
+            <a href="#"><img src="https://s2.svgbox.net/hero-outline.svg?ic=check-circle&color=1ff702" width="32" height="32"></a>
+            <a href="#"><img src="https://s2.svgbox.net/hero-outline.svg?ic=chip&color=1ff702" width="32" height="32"></a>
+            <a href="#"><img src="https://s2.svgbox.net/hero-outline.svg?ic=beaker&color=1ff702" width="32" height="32"></a>
+            <a href="#"><img src="https://s2.svgbox.net/hero-outline.svg?ic=chat-alt&color=1ff702" width="32" height="32"></a>
+            <a href="#"><img src="https://s2.svgbox.net/hero-outline.svg?ic=adjustments&color=1ff702" width="32" height="32"></a>
+        </nav>
+        </section>
+
+        <sidebar class="bloc annonce1">
+           Publicité
+          <section>
+              <div><img src="https://s2.svgbox.net/illlustrations.svg?ic=burger&color=026df7" width="32" height="32">La chaîne nationale de restaurants agricoles préférée des États-Unis à service rapide et phare de la marche mondiale vers l'homogénéisation culturelle</div>
+              <div><img src="https://s2.svgbox.net/illlustrations.svg?ic=building&color=026df7" width="32" height="32">Bienvenue sur le nouveau site web de la Ville de Montréal. Vous y trouverez des renseignements pratiques et pourrez faire des demandes en ligne</div>
+              <div><img src="https://s2.svgbox.net/illlustrations.svg?ic=covid-virus&color=026df7" width="32" height="32">COVID-19 affects different people in different ways. Most infected people will develop mild to moderate illness and recover without hospitalization.</div>
+              <div><img src="https://s2.svgbox.net/illlustrations.svg?ic=farm&color=026df7" width="32" height="32">No Matter The Job, Deere Precision Ag Has A Product For You. Contact Your Dealer Today.</div>
+         
+              
+            </section>
+        </sidebar>
+        <!-- sidebar class="bloc annonce2">
+            <section class='galerie'>
+                <img src="https://s2.svgbox.net/illlustrations.svg?ic=followers&color=026df7" width="32" height="32">
+                <img src="https://s2.svgbox.net/illlustrations.svg?ic=junk-boat&color=026df7" width="32" height="32">
+                <img src="https://s2.svgbox.net/illlustrations.svg?ic=owl&color=026df7" width="32" height="32">    
+                <img src="https://s2.svgbox.net/illlustrations.svg?ic=travel&color=026df7" width="32" height="32">
+                <img src="https://s2.svgbox.net/illlustrations.svg?ic=eiffel-tower&color=026df7" width="32" height="32">
+                <img src="https://s2.svgbox.net/illlustrations.svg?ic=dog&color=026df7" width="32" height="32">
+                <img src="https://s2.svgbox.net/illlustrations.svg?ic=designertool-war&color=026df7" width="32" height="32">     
+                <img src="https://s2.svgbox.net/illlustrations.svg?ic=bathroom&color=026df7" width="32" height="32">
+            </section>
+        </sidebar -->
+        <main class="bloc principal">
+            <h3>Conception</h3>
+            <h3>d'interface</h3>
+            <h3>et</h3>
+            <h3>développement</h3>
+            <h3>Web</h3>
+
+        </main>
+        <footer class="bloc pied-page">
+            <h3>Développé par Vincent Gélinas TIM</h3>
+        </footer>
+    </section>
+</body>
+
+<script>
+    let menuOuvert = false   
+    console.log(menuOuvert)
+    let burger = document.getElementById('burger')
+    burger.addEventListener('mousedown', function(){
+       if (menuOuvert == false){
+           burger.style.transitionDelay = ".1s"
+           burger.style.borderRadius = "5rem 0 0 5rem"
+           menuOuvert = true 
+       }
+       else {
+           burger.style.transitionDelay = "1s"
+           burger.style.borderRadius = "5rem"
+           menuOuvert = false 
+       }
+   
+    })
+   
+   
+   </script>
+
+</html>

@@ -1,0 +1,236 @@
+* {
+    margin : 0;
+    padding :0;
+}
+
+body {
+    width : 100vw;
+    height : 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    // background-color: rgb(179, 179, 204);
+    background-color: #777;
+
+}
+
+
+body::after {
+    content : "";
+    clip-path: polygon(0 0, 80% 0 , 50% 100% , 0 100%);
+    //background-color: rgb(43, 71, 233);
+    background-color: couleur(primaire);
+    position: fixed;
+    width : 100%;
+    height : 100%;
+    top : 0;
+    bottom :0;
+    left :0;
+    right : 0;
+    z-index: -1;
+}
+
+h1{font-size:4rem ;}
+h2{font-size:3rem ;}
+h3{font-size:2rem ;}
+h4{font-size:1rem ;}
+h5{font-size:.8rem ;}
+h6{font-size: .7rem ;}
+p {
+    font-size: .6rem;
+}
+
+.bloc {
+    border : 1px solid #666;
+    background-color:transparent;
+    color :#1ff702;
+    font-size: 3rem;
+    margin-left : 0;
+    display : flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.bloc img {
+    width : 100px;
+    height : 100px;
+    display: block;
+    border-radius :50%;
+    margin-right : 15px;
+}
+
+.grille {
+    display : grid;
+    width: 80%;
+    margin : 0 auto;
+    grid-gap : 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    grid-template-areas: 
+        "entete entete entete"
+        "menu menu menu"
+        "annonce1 annonce1 annonce1"
+        "principal principal principal"
+        "pied-page pied-page pied-page";
+        @include desktop    
+        {
+        grid-template-areas: 
+            "entete entete entete"
+            "menu menu menu"
+            "principal annonce1 annonce1"
+            "pied-page pied-page pied-page";
+        }
+}
+
+.entete{
+    grid-area: entete;
+}
+
+.menu{
+    grid-area: menu;
+}
+
+.annonce1{
+    grid-area: annonce1;
+}
+
+.principal{
+    grid-area: principal;
+}
+
+.pied-page{
+    grid-area: pied-page;
+}
+
+.entete{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    section{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgb(33, 41, 38);
+        margin-right: 30px;
+    }
+    }
+}
+
+.annonce1{
+    background-color: rgb(33, 41, 38);
+    color: #1ff702;
+    border-radius: 10px;
+    box-shadow: 7px 3px 11px 4px #757472;
+    padding: 42px;
+    margin: 20px;
+    div{
+        font-size: .4em;
+        display:flex;
+        align-items: center;
+        }
+    }
+
+.annonce2{
+    padding: 42px;
+    margin: 20px;
+    background-color: #efebc5;
+    color: #1c2127;
+    section {
+        display : flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+}
+.principal{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    h3{
+        padding: 1rem 0 1rem 0;
+    }
+}
+
+/*-----------------------burger------------------*/
+
+/* .menu {
+    height: 100vh;
+    width : 100vw;
+    display :grid;
+
+} */
+
+#chkburger {
+    display : none;
+}
+#burger {
+    background-color: rgb(33, 41, 38);
+    border-radius : 5rem;
+    padding : .5rem;
+    /* width: 5rem;
+    height: 5rem; */
+}
+
+/* #burger img{
+    width: 4rem;
+    height: 4rem;
+} */
+
+
+#chkburger:checked ~ nav {
+    clip-path: ellipse(50% 163% at 48% 50%);
+
+    a:nth-child(1) img:nth-child(1){
+        transition: opacity 1s;
+        opacity: 1;
+    }
+
+    a:nth-child(2) img:nth-child(1){
+        transition: opacity 2s;
+        opacity: 1;
+    }
+    
+    a:nth-child(3) img:nth-child(1){
+        transition: opacity 3s;
+        opacity: 1;
+    }
+    
+    a:nth-child(4) img:nth-child(1){
+        transition: opacity 4s;
+        opacity: 1;
+    }
+}
+
+.menu {
+   display : flex;
+   flex-direction: row;
+
+   nav {
+       width: 35rem;
+       display : flex;
+       align-items: center;
+       background-color: #777;
+       border-radius: 0 3rem 3rem 0;
+       transition : clip-path 1s;
+       clip-path: ellipse(50% 163% at -50% 50%);
+       a {
+           display : flex;
+           padding : .5rem;
+           justify-content: space-around;
+       }
+         img{
+             opacity: 0%;
+         }
+   }
+
+}
+

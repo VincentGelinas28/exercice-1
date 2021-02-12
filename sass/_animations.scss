@@ -1,0 +1,100 @@
+/*---------------Animation de la page d'acccueil-------------------*/
+
+.animation div{
+    /* transform: translateX(1000px); */
+    animation: anim-entete 1s 1s both cubic-bezier(0,.65,.54,.99);
+}
+
+@keyframes anim-entete{
+    0%{transform: translateX(1000px)}
+    100%{transform: translateX(0)}
+}
+
+.animation div:nth-of-type(1){
+    animation-delay: 1s;
+}
+.animation div:nth-of-type(2){
+    animation-delay: 1.5s;
+}
+.animation div:nth-of-type(3){
+    animation-delay: 2s;
+}
+.animation div:nth-of-type(4){
+    animation-delay: 2.5s;
+}
+.animation div:nth-of-type(5){
+    animation-delay: 3s;
+}
+
+/*-------------anim1-------------------------*/
+
+.principal h3:nth-of-type(1){
+    animation: anim1 1s both .5s;
+}
+
+@keyframes anim1{
+    0%{transform: translateY(-500px)}
+    100%{transform: translateY(0)}
+}
+
+/*----------------anim2----------------------*/
+
+.principal h3:nth-of-type(2){
+    animation: anim2 1s both 1s;
+}
+
+@keyframes anim2{
+    0%{transform: translateY(-600px)}
+    100%{transform: translateY(0)}
+}
+
+/*------------------anim3--------------------*/
+
+.principal h3:nth-of-type(3){
+    animation: anim3 1s both 1.5s;
+}
+
+@keyframes anim3{
+    0%{transform: translateX(-700px)}
+    100%{transform: translateY(0)}
+}
+
+/*----------------anim4----------------------*/
+
+.principal h3:nth-of-type(4){
+    animation: anim4 1s both 2s;
+}
+
+@keyframes anim4{
+    0%{transform: translateY(800px)}
+    100%{transform: translateY(0)}
+}
+
+/*-------------------anim5-------------------*/
+
+.principal h3:nth-of-type(5){
+    animation: anim5 1s both 2.5s;
+}
+
+@keyframes anim5{
+    0%{transform: translateY(900px)}
+    100%{transform: translateY(0)}
+}
+
+
+
+
+$paramAnim : (
+    1 : translateY(-500px),
+    2 : translateY(-600px),
+    3 : translateX(-700px),
+    4 : translateY(800px),
+    5 : translateY(900px)
+    );
+
+
+@function couleur($propriete){
+    @return map-get($couleurs, $propriete);
+}
+
+

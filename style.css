@@ -1,0 +1,361 @@
+/* ---------------------------------------
+variable
+------------------------------------------ */
+/* ---------------------------------------
+mixins
+------------------------------------------ */
+/* ---------------------------------------
+layout
+------------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  background-color: #777;
+}
+
+body::after {
+  content: "";
+  clip-path: polygon(0 0, 80% 0, 50% 100%, 0 100%);
+  background-color: #181a1d;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: .8rem;
+}
+
+h6 {
+  font-size: .7rem;
+}
+
+p {
+  font-size: .6rem;
+}
+
+.bloc {
+  border: 1px solid #666;
+  background-color: transparent;
+  color: #1ff702;
+  font-size: 3rem;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.bloc img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.grille {
+  display: grid;
+  width: 80%;
+  margin: 0 auto;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "entete entete entete" "menu menu menu" "annonce1 annonce1 annonce1" "principal principal principal" "pied-page pied-page pied-page";
+}
+
+@media (min-width: 1000px) {
+  .grille {
+    grid-template-areas: "entete entete entete" "menu menu menu" "principal annonce1 annonce1" "pied-page pied-page pied-page";
+  }
+}
+
+.entete {
+  grid-area: entete;
+}
+
+.menu {
+  grid-area: menu;
+}
+
+.annonce1 {
+  grid-area: annonce1;
+}
+
+.principal {
+  grid-area: principal;
+}
+
+.pied-page {
+  grid-area: pied-page;
+}
+
+.entete {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.entete section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.entete section div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #212926;
+  margin-right: 30px;
+}
+
+.annonce1 {
+  background-color: #212926;
+  color: #1ff702;
+  border-radius: 10px;
+  box-shadow: 7px 3px 11px 4px #757472;
+  padding: 42px;
+  margin: 20px;
+}
+
+.annonce1 div {
+  font-size: .4em;
+  display: flex;
+  align-items: center;
+}
+
+.annonce2 {
+  padding: 42px;
+  margin: 20px;
+  background-color: #efebc5;
+  color: #1c2127;
+}
+
+.annonce2 section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+}
+
+.principal h3 {
+  padding: 1rem 0 1rem 0;
+}
+
+/*-----------------------burger------------------*/
+/* .menu {
+    height: 100vh;
+    width : 100vw;
+    display :grid;
+
+} */
+#chkburger {
+  display: none;
+}
+
+#burger {
+  background-color: #212926;
+  border-radius: 5rem;
+  padding: .5rem;
+  /* width: 5rem;
+    height: 5rem; */
+}
+
+/* #burger img{
+    width: 4rem;
+    height: 4rem;
+} */
+#chkburger:checked ~ nav {
+  clip-path: ellipse(50% 163% at 48% 50%);
+}
+
+#chkburger:checked ~ nav a:nth-child(1) img:nth-child(1) {
+  transition: opacity 1s;
+  opacity: 1;
+}
+
+#chkburger:checked ~ nav a:nth-child(2) img:nth-child(1) {
+  transition: opacity 2s;
+  opacity: 1;
+}
+
+#chkburger:checked ~ nav a:nth-child(3) img:nth-child(1) {
+  transition: opacity 3s;
+  opacity: 1;
+}
+
+#chkburger:checked ~ nav a:nth-child(4) img:nth-child(1) {
+  transition: opacity 4s;
+  opacity: 1;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu nav {
+  width: 35rem;
+  display: flex;
+  align-items: center;
+  background-color: #777;
+  border-radius: 0 3rem 3rem 0;
+  transition: clip-path 1s;
+  clip-path: ellipse(50% 163% at -50% 50%);
+}
+
+.menu nav a {
+  display: flex;
+  padding: .5rem;
+  justify-content: space-around;
+}
+
+.menu nav img {
+  opacity: 0%;
+}
+
+/* ---------------------------------------
+animation
+------------------------------------------ */
+/*---------------Animation de la page d'acccueil-------------------*/
+.animation div {
+  /* transform: translateX(1000px); */
+  animation: anim-entete 1s 1s both cubic-bezier(0, 0.65, 0.54, 0.99);
+}
+
+@keyframes anim-entete {
+  0% {
+    transform: translateX(1000px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animation div:nth-of-type(1) {
+  animation-delay: 1s;
+}
+
+.animation div:nth-of-type(2) {
+  animation-delay: 1.5s;
+}
+
+.animation div:nth-of-type(3) {
+  animation-delay: 2s;
+}
+
+.animation div:nth-of-type(4) {
+  animation-delay: 2.5s;
+}
+
+.animation div:nth-of-type(5) {
+  animation-delay: 3s;
+}
+
+/*-------------anim1-------------------------*/
+.principal h3:nth-of-type(1) {
+  animation: anim1 1s both .5s;
+}
+
+@keyframes anim1 {
+  0% {
+    transform: translateY(-500px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/*----------------anim2----------------------*/
+.principal h3:nth-of-type(2) {
+  animation: anim2 1s both 1s;
+}
+
+@keyframes anim2 {
+  0% {
+    transform: translateY(-600px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/*------------------anim3--------------------*/
+.principal h3:nth-of-type(3) {
+  animation: anim3 1s both 1.5s;
+}
+
+@keyframes anim3 {
+  0% {
+    transform: translateX(-700px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/*----------------anim4----------------------*/
+.principal h3:nth-of-type(4) {
+  animation: anim4 1s both 2s;
+}
+
+@keyframes anim4 {
+  0% {
+    transform: translateY(800px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/*-------------------anim5-------------------*/
+.principal h3:nth-of-type(5) {
+  animation: anim5 1s both 2.5s;
+}
+
+@keyframes anim5 {
+  0% {
+    transform: translateY(900px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
